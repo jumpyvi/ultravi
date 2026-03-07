@@ -6,7 +6,6 @@ COPY build_files /
 FROM quay.io/almalinuxorg/almalinux-bootc:10-kitten
 
 RUN dnf install -y dnf-plugins-core 'dnf-command(versionlock)' && \
-    dnf copr enable -y "jreilly1821/c10s-gnome" && \
     dnf -y copr enable ublue-os/packages && \
     dnf -y copr disable ublue-os/packages && \
     dnf -y install epel-release && dnf upgrade -y && \
