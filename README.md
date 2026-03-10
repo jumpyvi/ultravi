@@ -1,15 +1,17 @@
 # Alchemist
 
+💙 This uses [zirconium-mkosi](https://github.com/tulilirockz/zirconium-mkosi) as a template, thank you!
+
 # Purpose
 
-Minimalist AlmaLinux bootable container with ublue-like utilies
+Minimalist MkOSI AlmaLinux bootable container with ublue-like utilies
 
 
 ## Workstation
 
-☁️ Based on almalinux:10-kitten
+☁️ Based on almalinux:10
 
-A slight modification to the base image matching my preference and requirements
+Mkosi almalinux image
 
 ### Changes:
 - Up to date and minimal gnome-shell
@@ -25,7 +27,8 @@ A slight modification to the base image matching my preference and requirements
 sudo bootc switch --enforce-container-sigpolicy "ghcr.io/jumpyvi/alchemist:latest"
 ```
 
-# Thanks
+# Huge thanks
+- https://github.com/tulilirockz/zirconium-mkosi
 - https://github.com/tuna-os/tunaOS
 - https://github.com/bootcrew
 - https://github.com/ublue-os/bluefin-lts

@@ -3,3 +3,7 @@ _build_*
 output
 _build-*/**
 *.img
+*private*
+*.output
+*cache
+*.tools

@@ -1,0 +1,35 @@
+[epel-multimedia]
+name=negativo17 - Multimedia
+baseurl=https://negativo17.org/repos/multimedia/epel-10/$basearch/
+enabled=1
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[epel-multimedia-source]
+name=negativo17 - Multimedia - Source
+baseurl=https://negativo17.org/repos/multimedia/epel-10/SRPMS
+enabled=0
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
+
+[epel-multimedia-debug]
+name=negativo17 - Multimedia - Debug
+baseurl=https://negativo17.org/repos/multimedia/epel-10/$basearch.debug/
+enabled=0
+skip_if_unavailable=1
+gpgkey=https://negativo17.org/repos/RPM-GPG-KEY-slaanesh
+gpgcheck=1
+enabled_metadata=1
+metadata_expire=6h
+type=rpm-md
+repo_gpgcheck=0
