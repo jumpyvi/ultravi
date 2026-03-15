@@ -47,6 +47,7 @@
         "opensc",
         "openssh-clients",
         "openssl",
+        "ostree",
         "pacman",
         "pkcs11-provider",
         "policycoreutils",
