@@ -1,0 +1,27 @@
+[centos-hyperscale]
+name=CentOS Stream $releasever - Hyperscale
+metalink=https://mirrors.centos.org/metalink?repo=centos-hyperscale-sig-packages-main-$stream&arch=$basearch&protocol=https,http
+#baseurl=http://mirror.stream.centos.org/SIGs/$stream/hyperscale/$basearch/packages-main/
+gpgcheck=0
+priority=10
+enabled=1
+countme=1
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-HyperScale
+
+[centos-hyperscale-debuginfo]
+name=CentOS Stream $releasever - Hyperscale - Debug
+metalink=https://mirrors.centos.org/metalink?repo=centos-hyperscale-sig-packages-main-debug-$stream&arch=$basearch&protocol=https,http
+#baseurl=http://mirror.stream.centos.org/SIGs/$stream/hyperscale/$basearch/packages-main/debug/
+gpgcheck=0
+priority=10
+enabled=0
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-HyperScale
+
+[centos-hyperscale-source]
+name=CentOS Stream $releasever - Hyperscale - Source
+metalink=https://mirrors.centos.org/metalink?repo=centos-hyperscale-sig-packages-main-source-$stream&arch=source&protocol=https,http
+#baseurl=http://mirror.stream.centos.org/SIGs/$stream/hyperscale/source/packages-main/
+gpgcheck=0
+priority=10
+enabled=0
+# gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-HyperScale
