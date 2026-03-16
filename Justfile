@@ -1,7 +1,8 @@
+image := env("IMAGE_FULL", "localhost/alma-bootc:latest")
 image_name := env("BUILD_IMAGE_NAME", "alma-bootc")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
 base_dir := env("BUILD_BASE_DIR", ".")
-filesystem := env("BUILD_FILESYSTEM", "xfs")
+filesystem := env("BUILD_FILESYSTEM", "btrfs")
 selinux := env("BUILD_SELINUX", "true")
 
 options := if selinux == "true" { "-v /var/lib/containers:/var/lib/containers:Z -v /etc/containers:/etc/containers:Z -v /sys/fs/selinux:/sys/fs/selinux --security-opt label=type:unconfined_t" } else { "-v /var/lib/containers:/var/lib/containers -v /etc/containers:/etc/containers" }
@@ -19,6 +20,18 @@ bootc *ARGS:
         -e RUST_LOG=debug \
         -v "{{base_dir}}:/data" \
         "{{image_name}}:{{image_tag}}" bootc {{ARGS}}
+
+ostree-rechunk:
+    #!/usr/bin/env bash
+    sudo podman run --rm \
+          --privileged \
+          --network=host \
+          -t \
+          -v /var/lib/containers:/var/lib/containers \
+          "quay.io/centos-bootc/centos-bootc:stream10" \
+          /usr/libexec/bootc-base-imagectl rechunk --max-layers 67 \
+          "{{image}}" \
+          "{{image}}" || exit 1
 
 generate-bootable-image $base_dir=base_dir $filesystem=filesystem:
     #!/usr/bin/env bash

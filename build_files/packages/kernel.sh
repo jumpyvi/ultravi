@@ -5,6 +5,11 @@ set -eoux pipefail
 dnf5 copr enable -y kwizart/kernel-longterm-6.12
 
 # Remove existing kernels to prevent conflicts
+dnf5 remove -y \
+    kernel \
+    kernel-core \
+    kernel-devel
+
 readarray -t OLD_KERNELS < <(rpm -qa 'kernel-*' | grep -v 'kernel-longterm')
 if (( ${#OLD_KERNELS[@]} )); then
     rpm -e --justdb --nodeps "${OLD_KERNELS[@]}"

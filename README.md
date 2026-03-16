@@ -2,17 +2,17 @@
 
 # Purpose
 
-Minimalist AlmaLinux bootable container with ublue-like utilies
+Minimalist Fedora bootable container with ublue-like utilies
 
 
 ## Workstation
 
-☁️ Based on almalinux:10-kitten
+☁️ Based on fedora:43
 
 A slight modification to the base image matching my preference and requirements
 
 ### Changes:
-- Up to date and minimal gnome-shell
+- Minimal gnome-shell
 - Virtualization support
 - Uupd
 - Necessary drivers, codecs and utils
@@ -28,4 +28,4 @@ sudo bootc switch --enforce-container-sigpolicy "ghcr.io/jumpyvi/alchemist:lates
 # Thanks
 - https://github.com/tuna-os/tunaOS
 - https://github.com/bootcrew
-- https://github.com/ublue-os/bluefin-lts
+- https://github.com/ublue-os/bluefin
