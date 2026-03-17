@@ -74,6 +74,14 @@ RUN dnf config-manager addrepo --from-repofile=https://negativo17.org/repos/fedo
 # Ubuntu-like
 RUN dnf -y install uutils-coreutils sudo-rs yaru-theme adw-gtk3-theme
 
+RUN ln -s /usr/bin/sudo-rs /usr/local/bin/sudo
+RUN for file in /usr/bin/uu_*; do \
+        base=$(basename "$file"); \
+        [ "$base" = "uu_[" ] && continue; \
+        target="/usr/local/bin/${base#uu_}"; \
+        ln -s "$file" "$target"; \
+    done
+
 RUN dnf install -y git cmake make binutils just curl wget tmux ddcutil podman distrobox fpaste unzip wireguard-tools fpaste wl-clipboard xdg-terminal-exec xhost
 
 RUN dnf install -y evolution evolution-ews
