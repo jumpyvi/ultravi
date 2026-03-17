@@ -72,7 +72,7 @@ RUN dnf config-manager addrepo --from-repofile=https://negativo17.org/repos/fedo
     dnf -y install ntfs-3g xfsprogs btrfs-progs gvfs-mtp gvfs-smb open-vm-tools-desktop zram-generator
 
 # Ubuntu-like
-RUN dnf -y install uutils-coreutils sudo-rs yaru-theme
+RUN dnf -y install uutils-coreutils sudo-rs yaru-theme adw-gtk3-theme
 
 RUN dnf install -y git cmake make binutils just curl wget tmux ddcutil podman distrobox fpaste unzip wireguard-tools fpaste wl-clipboard xdg-terminal-exec xhost
 
