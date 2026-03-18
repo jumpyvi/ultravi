@@ -71,8 +71,10 @@ RUN dnf config-manager addrepo --from-repofile=https://negativo17.org/repos/fedo
     dnf -y install firewalld firewall-config tailscale && \
     dnf -y install ntfs-3g xfsprogs btrfs-progs gvfs-mtp gvfs-smb open-vm-tools-desktop zram-generator
 
-# Ubuntu-like
-RUN dnf -y install uutils-coreutils sudo-rs yaru-theme adw-gtk3-theme
+# Modern utils
+RUN dnf -y install uutils-coreutils sudo-rs yaru-theme adw-gtk3-theme neovim
+
+RUN ln -s /usr/bin/nvim /usr/local/bin/vim && ln -s /usr/bin/nvim /usr/local/bin/vi
 
 RUN ln -s /usr/bin/sudo-rs /usr/local/bin/sudo
 RUN for file in /usr/bin/uu_*; do \
